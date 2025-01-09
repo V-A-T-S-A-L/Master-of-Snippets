@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Footer from './Footer';
+import Accordion from './Accordian';
 
 function Home() {
     const [selectedConcept, setSelectedConcept] = useState('');
@@ -20,7 +21,7 @@ function Home() {
         <div className="dark:bg-gray-900 p-8 h-screen">
             {/* Catchy Quote Section */}
             <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold text-gray-800 dark:text-white">
+                <h2 className="font-serif text-4xl font-bold text-gray-800 dark:text-white">
                     From Basics to Brilliance, <span className="bg-gradient-to-r from-pink-500 to-pink-700 text-transparent bg-clip-text dark:from-pink-300 dark:to-pink-500">
                         One Snippet Away.
                     </span>
@@ -38,7 +39,7 @@ function Home() {
                 </label>
                 <select
                     id="dsa-select"
-                    className="p-2 border border-gray-300 rounded-md dark:border-gray-600"
+                    className="p-2 border cursor-pointer border-gray-300 rounded-md dark:border-gray-600"
                     value={selectedConcept}
                     onChange={(e) => setSelectedConcept(e.target.value)}
                 >
@@ -59,7 +60,7 @@ function Home() {
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {flashcards[selectedConcept].map((flashcard, index) => (
-                            <div key={index} className="p-4 bg-white dark:bg-gray-700 rounded-lg drop-shadow-xl">
+                            <div key={index} className="p-6 hover:scale-105 transition-hover duration-300  bg-white dark:bg-gray-700 rounded-xl drop-shadow-lg border-2 border-gray-200 dark:border-gray-800">
                                 <p className="text-gray-800 dark:text-white">{flashcard}</p>
                             </div>
                         ))}
