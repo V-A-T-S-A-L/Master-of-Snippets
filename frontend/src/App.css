@@ -40,3 +40,35 @@
     transform: rotate(360deg);
   }
 }
+
+.svg-icon-moon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon-moon path,
+.svg-icon-moon polygon,
+.svg-icon-moon rect {
+  fill: #000;
+}
+
+.svg-icon-moon circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
+.svg-icon-sun {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon-sun path,
+.svg-icon-sun polygon,
+.svg-icon-sun rect {
+  fill: #fff;
+}
+
+.svg-icon-sun circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
