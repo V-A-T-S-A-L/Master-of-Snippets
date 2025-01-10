@@ -32,24 +32,26 @@ function Home() {
                 </p>
             </div>
 
-            {/* Dropdown for DSA Concepts */}
+            {/* Stylish Dropdown for DSA Concepts */}
             <div className="text-center mb-8">
                 <label htmlFor="dsa-select" className="block text-gray-800 dark:text-white mb-2">
                     Select a DSA Concept:
                 </label>
-                <select
-                    id="dsa-select"
-                    className="p-2 border cursor-pointer border-gray-300 rounded-md dark:border-gray-600"
-                    value={selectedConcept}
-                    onChange={(e) => setSelectedConcept(e.target.value)}
-                >
-                    <option value="">-- Select a Concept --</option>
-                    {dsaConcepts.map((concept, index) => (
-                        <option key={index} value={concept}>
-                            {concept}
-                        </option>
-                    ))}
-                </select>
+                <div className="relative inline-block w-64">
+                    <select
+                        id="dsa-select"
+                        className="block w-full px-4 py-2 cursor-pointer text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-pink-500"
+                        value={selectedConcept}
+                        onChange={(e) => setSelectedConcept(e.target.value)}
+                    >
+                        <option value="">-- Select a Concept --</option>
+                        {dsaConcepts.map((concept, index) => (
+                            <option key={index} value={concept}>
+                                {concept}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             {/* Flashcards Section */}
@@ -60,7 +62,7 @@ function Home() {
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {flashcards[selectedConcept].map((flashcard, index) => (
-                            <div key={index} className="p-6 hover:scale-105 transition-hover duration-300  bg-white dark:bg-gray-700 rounded-xl drop-shadow-lg border-2 border-gray-200 dark:border-gray-800">
+                            <div key={index} className="p-6 hover:scale-105 transition-transform duration-300 bg-white dark:bg-gray-700 rounded-xl drop-shadow-lg border-2 border-gray-200 dark:border-gray-800">
                                 <p className="text-gray-800 dark:text-white">{flashcard}</p>
                             </div>
                         ))}
