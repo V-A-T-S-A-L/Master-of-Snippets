@@ -1,24 +1,53 @@
+// Home.js
+import axios from 'axios';
 import React, { useState } from 'react';
-import Footer from './Footer';
-import Accordion from './Accordian';
+import Modal from './Modal'; // Import the Modal component
 
 function Home() {
     const [selectedConcept, setSelectedConcept] = useState('');
+    const [conceptData, setConceptData] = useState([]);
+    const [isModalOpen, setIsModalOpen] = useState(false); // Modal visibility state
+    const [modalData, setModalData] = useState({
+        title: '',
+        description: '',
+        language: '',
+        code: '',
+        contributor: '',
+        tags: [],
+        dateAdded: '',
+        complexity: '',
+        examples: []
+    }); // Data for the modal
     const dsaConcepts = ['Arrays', 'Linked Lists', 'Stacks', 'Queues', 'Trees', 'Graphs', 'Sorting', 'Searching'];
 
-    const flashcards = {
-        Arrays: ['Flashcard for Arrays 1', 'Flashcard for Arrays 2'],
-        'Linked Lists': ['Flashcard for Linked Lists 1', 'Flashcard for Linked Lists 2', 'Flashcard for Linked Lists 3'],
-        Stacks: ['Flashcard for Stacks 1', 'Flashcard for Stacks 2'],
-        Queues: ['Flashcard for Queues 1', 'Flashcard for Queues 2'],
-        Trees: ['Flashcard for Trees 1', 'Flashcard for Trees 2'],
-        Graphs: ['Flashcard for Graphs 1', 'Flashcard for Graphs 2'],
-        Sorting: ['Flashcard for Sorting 1', 'Flashcard for Sorting 2'],
-        Searching: ['Flashcard for Searching 1', 'Flashcard for Searching 2'],
+    const fetchData = async (concept) => {
+        try {
+            const response = await axios.get(`http://localhost:5000/api/concept/${concept.toLowerCase().replace(' ', '')}`);
+            setConceptData(response.data.snippets || []);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    const handleConceptChange = (e) => {
+        const concept = e.target.value;
+        setSelectedConcept(concept);
+        if (concept) {
+            fetchData(concept);
+        }
+    };
+
+    const openModal = (data) => {
+        setModalData(data); // Pass the entire data to the modal
+        setIsModalOpen(true); // Open the modal
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false); // Close the modal
     };
 
     return (
-        <div className="dark:bg-gray-900 p-8 h-screen">
+        <div className="dark:bg-gray-900 p-8 h-auto min-h-screen">
             {/* Catchy Quote Section */}
             <div className="text-center mb-8">
                 <h2 className="font-serif text-4xl font-bold text-gray-800 dark:text-white">
@@ -26,7 +55,6 @@ function Home() {
                         One Snippet Away.
                     </span>
                 </h2>
-
                 <p className="text-lg text-gray-600 dark:text-gray-300 mt-4">
                     Learn, practice, and excel with bite-sized flashcards designed for quick understanding and retention.
                 </p>
@@ -42,7 +70,7 @@ function Home() {
                         id="dsa-select"
                         className="block w-full px-4 py-2 cursor-pointer text-gray-700 bg-white border border-gray-300 rounded-lg shadow-md dark:bg-gray-700 dark:text-white dark:border-gray-600 focus:outline-none focus:ring-1 focus:ring-pink-500"
                         value={selectedConcept}
-                        onChange={(e) => setSelectedConcept(e.target.value)}
+                        onChange={handleConceptChange}
                     >
                         <option value="">-- Select a Concept --</option>
                         {dsaConcepts.map((concept, index) => (
@@ -61,14 +89,34 @@ function Home() {
                         Flashcards for {selectedConcept}
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {flashcards[selectedConcept].map((flashcard, index) => (
-                            <div key={index} className="p-6 hover:scale-105 transition-transform duration-300 bg-white dark:bg-gray-700 rounded-xl drop-shadow-lg border-2 border-gray-200 dark:border-gray-800">
-                                <p className="text-gray-800 dark:text-white">{flashcard}</p>
+                        {conceptData.map((snippet, index) => (
+                            <div
+                                key={index}
+                                className="p-6 hover:scale-105 transition-transform duration-300 bg-white dark:bg-gray-700 rounded-xl drop-shadow-lg border-2 border-gray-200 dark:border-gray-800 cursor-pointer"
+                                onClick={() => openModal(snippet)} // Open modal with the selected snippet data
+                            >
+                                <h4 className="text-lg font-bold text-gray-800 dark:text-white">{snippet.title}</h4>
+                                <p className="text-gray-800 dark:text-white">{snippet.description}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             )}
+
+            {/* Modal Component */}
+            <Modal
+                isOpen={isModalOpen}
+                closeModal={closeModal}
+                title={modalData.title}
+                description={modalData.description}
+                language={modalData.language}
+                code={modalData.code}
+                contributor={modalData.contributor}
+                tags={modalData.tags}
+                dateAdded={modalData.dateAdded}
+                complexity={modalData.complexity}
+                examples={modalData.examples}
+            />
         </div>
     );
 }
