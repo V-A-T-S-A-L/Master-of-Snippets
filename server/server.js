@@ -12,7 +12,6 @@ app.get('/api/concept/:conceptName', (req, res) => {
     const conceptName = req.params.conceptName;
     const filePath = path.join(__dirname, 'data', `${conceptName}.json`);
 
-    console.log(filePath);
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             return res.status(404).json({ message: 'Concept not found' });

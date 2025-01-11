@@ -16,7 +16,8 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
         // Add other languages as needed
     };
 
-    const formattedCode = code.replace(/\\n/g, '\n');
+    // Ensure code is a string before calling replace
+    const formattedCode = Array.isArray(code) ? code.join('\n') : code; // Join array elements with newlines
 
     return (
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50">
@@ -37,7 +38,7 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
                     <div className="flex items-center mb-2">
                         <span className="font-semibold text-gray-700 dark:text-gray-200">{language}</span>
                     </div>
-                    <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                    <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg border-2 border-gray-300 dark:border-gray-600">
                         {/* SyntaxHighlighter with language map */}
                         <SyntaxHighlighter className="max-h-52 overflow-scroll" language={languageMap[language] || 'text'} style={docco}>
                             {formattedCode}
@@ -72,12 +73,7 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
                     <div className="flex flex-wrap gap-2 mt-2">
                     <span className="font-semibold text-gray-700 dark:text-gray-200">Tags:</span>
                         {tags.map((tag, index) => (
-                            <span
-                                key={index}
-                                className="bg-pink-100 text-pink-800 dark:bg-pink-600 dark:text-pink-100 px-3 py-1 rounded-full text-sm font-medium"
-                            >
-                                {tag}
-                            </span>
+                            <span key={index} className="text-sm px-2 py-1 text-white bg-pink-600 rounded-full">{tag}</span>
                         ))}
                     </div>
                 </div>

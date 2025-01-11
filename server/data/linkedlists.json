@@ -1,0 +1,128 @@
+{
+    "snippets": [
+        {
+            "title": "Inserting a Node at the Beginning of a Linked List",
+            "description": "This snippet demonstrates how to insert a node at the beginning of a linked list in JavaScript.",
+            "language": "JavaScript",
+            "code": [
+                "class Node {",
+                "    constructor(data) {",
+                "        this.data = data;",
+                "        this.next = null;",
+                "    }",
+                "}",
+                "class LinkedList {",
+                "    constructor() {",
+                "        this.head = null;",
+                "    }",
+                "    insertAtBeginning(data) {",
+                "        const newNode = new Node(data);",
+                "        newNode.next = this.head;",
+                "        this.head = newNode;",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "linked list",
+                "insertion",
+                "beginning",
+                "node",
+                "algorithm"
+            ],
+            "dateAdded": "2025-01-11",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "insertAtBeginning(10)",
+                    "output": "Linked List: 10"
+                }
+            ]
+        },
+        {
+            "title": "Reversing a Linked List",
+            "description": "This snippet demonstrates how to reverse a singly linked list in Python.",
+            "language": "Python",
+            "code": [
+                "class Node:",
+                "    def __init__(self, data):",
+                "        self.data = data",
+                "        self.next = None",
+                "class LinkedList:",
+                "    def __init__(self):",
+                "        self.head = None",
+                "    def reverse(self):",
+                "        prev = None",
+                "        current = self.head",
+                "        while current:",
+                "            next_node = current.next",
+                "            current.next = prev",
+                "            prev = current",
+                "            current = next_node",
+                "        self.head = prev"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "linked list",
+                "reverse",
+                "python"
+            ],
+            "dateAdded": "2025-01-12",
+            "complexity": "O(n)",
+            "examples": [
+                {
+                    "input": "Linked List: 1 -> 2 -> 3 -> 4",
+                    "output": "Reversed Linked List: 4 -> 3 -> 2 -> 1"
+                }
+            ]
+        },
+        {
+            "title": "Finding the Length of a Linked List",
+            "description": "This snippet calculates the length of a singly linked list in C++.",
+            "language": "C++",
+            "code": [
+                "#include <iostream>",
+                "using namespace std;",
+                "class Node {",
+                "public:",
+                "    int data;",
+                "    Node* next;",
+                "    Node(int data) {",
+                "        this->data = data;",
+                "        this->next = nullptr;",
+                "    }",
+                "};",
+                "class LinkedList {",
+                "public:",
+                "    Node* head;",
+                "    LinkedList() {",
+                "        head = nullptr;",
+                "    }",
+                "    int getLength() {",
+                "        int length = 0;",
+                "        Node* current = head;",
+                "        while (current) {",
+                "            length++;",
+                "            current = current->next;",
+                "        }",
+                "        return length;",
+                "    }",
+                "};"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "linked list",
+                "length",
+                "c++"
+            ],
+            "dateAdded": "2025-01-13",
+            "complexity": "O(n)",
+            "examples": [
+                {
+                    "input": "Linked List: 10 -> 20 -> 30",
+                    "output": "Length: 3"
+                }
+            ]
+        }
+    ]
+}
