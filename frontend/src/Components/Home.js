@@ -22,7 +22,7 @@ function Home() {
 
     const fetchData = async (concept) => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/concept/${concept.toLowerCase().replace(' ', '')}`);
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_BASE_URL}/api/concept/${concept.toLowerCase().replace(' ', '')}`);
             setConceptData(response.data.snippets || []);
         } catch (error) {
             console.error('Error fetching data:', error);

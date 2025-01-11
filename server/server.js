@@ -5,7 +5,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 // Endpoint to fetch data based on the concept
 app.get('/api/concept/:conceptName', (req, res) => {
