@@ -64,8 +64,8 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
                 </div>
 
                 <div className="mb-4 flex">
-                    <span className="font-semibold text-gray-700 dark:text-gray-200">Contributor:&nbsp;</span>
-                    <a className="text-gray-600 dark:text-gray-300" href={`https://github.com/`+contributor} target='__blank'>{contributor}</a>
+                    <span className="font-semibold text-gray-700 dark:text-gray-200">Contributed by&nbsp;</span>
+                    <a className="text-gray-600 dark:text-gray-300" href={`https://github.com/`+contributor} target='__blank'>@{contributor}</a>
                 </div>
 
                 {/* Tags Section */}
