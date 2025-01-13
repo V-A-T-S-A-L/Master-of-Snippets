@@ -2,11 +2,11 @@
     "version": 2,
     "routes": [
         {
-            "source": "/api/(.*)",
+            "src": "/api/(.*)",
             "destination": "/api/$1"
         },
         {
-            "source": "/(.*)",
+            "src": "/(.*)",
             "destination": "/index.html"
         }
     ]
