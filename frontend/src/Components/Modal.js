@@ -38,9 +38,9 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
                     <div className="flex items-center mb-2">
                         <span className="font-semibold text-gray-700 dark:text-gray-200">{language}</span>
                     </div>
-                    <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg border-2 border-gray-300 dark:border-gray-600">
+                    <div className="bg-gray-100 dark:bg-gray-700 p-1 rounded-lg border-2 border-gray-300 dark:border-gray-600">
                         {/* SyntaxHighlighter with language map */}
-                        <SyntaxHighlighter className="max-h-52 overflow-scroll" language={languageMap[language] || 'text'} style={docco}>
+                        <SyntaxHighlighter className="max-h-60 overflow-scroll" language={languageMap[language] || 'text'} style={docco}>
                             {formattedCode}
                         </SyntaxHighlighter>
                     </div>
@@ -54,7 +54,7 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
 
                 {/* Examples Section */}
                 <div className="mb-4">
-                    <span className="font-semibold text-gray-700 dark:text-gray-200">Examples:</span>
+                    <span className="font-semibold text-gray-700 dark:text-gray-200">Example:</span>
                     {examples.map((example, index) => (
                         <div key={index} className="mb-2">
                             <p className="text-gray-600 dark:text-gray-300"><strong>Input:</strong> {example.input}</p>
@@ -71,7 +71,6 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
                 {/* Tags Section */}
                 <div className="mb-4">
                     <div className="flex flex-wrap gap-2 mt-2">
-                    <span className="font-semibold text-gray-700 dark:text-gray-200">Tags:</span>
                         {tags.map((tag, index) => (
                             <span key={index} className="text-sm px-2 py-1 text-white bg-pink-600 rounded-full">{tag}</span>
                         ))}

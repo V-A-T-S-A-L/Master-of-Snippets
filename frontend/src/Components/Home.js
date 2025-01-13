@@ -96,7 +96,6 @@ function Home() {
                                 onClick={() => openModal(snippet)} // Open modal with the selected snippet data
                             >
                                 <h4 className="text-lg font-bold text-gray-800 dark:text-white">{snippet.title}</h4>
-                                <p className="text-gray-800 dark:text-white">{snippet.description}</p>
                             </div>
                         ))}
                     </div>

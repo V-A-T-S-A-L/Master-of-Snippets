@@ -11,7 +11,7 @@ const AccordionItem = ({ title, content }) => {
 					className="flex items-center justify-between w-full px-10 py-5 font-medium rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 gap-3"
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					<span>{title}</span>
+					<span className="text-left">{title}</span>
 					<svg
 						className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-180' : ''
 							}`}
