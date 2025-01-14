@@ -1,0 +1,94 @@
+{
+    "snippets": [
+        {
+            "title": "Pushing an Element onto a Stack",
+            "description": "This snippet demonstrates how to push an element onto a stack using the Stack class in Java.",
+            "language": "Java",
+            "code": [
+                "import java.util.Stack;",
+                "",
+                "public class StackPushExample {",
+                "    public static void main(String[] args) {",
+                "        Stack<Integer> stack = new Stack<>();",
+                "        stack.push(10);",
+                "        System.out.println(\"Stack after push: \" + stack);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "stack",
+                "push",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "10",
+                    "output": "[10]"
+                }
+            ]
+        },
+        {
+            "title": "Popping an Element from a Stack",
+            "description": "This snippet shows how to pop an element from the top of a stack in Java.",
+            "language": "Java",
+            "code": [
+                "import java.util.Stack;",
+                "",
+                "public class StackPopExample {",
+                "    public static void main(String[] args) {",
+                "        Stack<Integer> stack = new Stack<>();",
+                "        stack.push(20);",
+                "        int poppedElement = stack.pop();",
+                "        System.out.println(\"Popped element: \" + poppedElement);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "stack",
+                "pop",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "[20]",
+                    "output": "20"
+                }
+            ]
+        },
+        {
+            "title": "Checking if a Stack is Empty",
+            "description": "This snippet shows how to check if a stack is empty using the Stack class in Java.",
+            "language": "Java",
+            "code": [
+                "import java.util.Stack;",
+                "",
+                "public class StackIsEmptyExample {",
+                "    public static void main(String[] args) {",
+                "        Stack<Integer> stack = new Stack<>();",
+                "        System.out.println(\"Is stack empty? \" + stack.isEmpty());",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "stack",
+                "isEmpty",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "[]",
+                    "output": "true"
+                }
+            ]
+        }
+    ]
+}

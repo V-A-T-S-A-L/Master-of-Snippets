@@ -1,0 +1,88 @@
+{
+    "snippets": [
+        {
+            "title": "Reversing a String",
+            "description": "This snippet demonstrates how to reverse a string in Java.",
+            "language": "Java",
+            "code": [
+                "public class StringReverseExample {",
+                "    public static void main(String[] args) {",
+                "        String original = \"hello\";",
+                "        String reversed = new StringBuilder(original).reverse().toString();",
+                "        System.out.println(\"Reversed string: \" + reversed);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "string",
+                "reverse",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(n)",
+            "examples": [
+                {
+                    "input": "\"hello\"",
+                    "output": "\"olleh\""
+                }
+            ]
+        },
+        {
+            "title": "Checking if a String is a Palindrome",
+            "description": "This snippet shows how to check if a string is a palindrome in Java.",
+            "language": "Java",
+            "code": [
+                "public class PalindromeCheckExample {",
+                "    public static void main(String[] args) {",
+                "        String str = \"madam\";",
+                "        boolean isPalindrome = str.equals(new StringBuilder(str).reverse().toString());",
+                "        System.out.println(\"Is palindrome: \" + isPalindrome);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "string",
+                "palindrome",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(n)",
+            "examples": [
+                {
+                    "input": "\"madam\"",
+                    "output": "true"
+                }
+            ]
+        },
+        {
+            "title": "Finding the Length of a String",
+            "description": "This snippet demonstrates how to find the length of a string in Java.",
+            "language": "Java",
+            "code": [
+                "public class StringLengthExample {",
+                "    public static void main(String[] args) {",
+                "        String str = \"example\";",
+                "        int length = str.length();",
+                "        System.out.println(\"Length of string: \" + length);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "string",
+                "length",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "\"example\"",
+                    "output": "7"
+                }
+            ]
+        }
+    ]
+}

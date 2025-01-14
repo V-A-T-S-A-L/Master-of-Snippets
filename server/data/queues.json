@@ -1,0 +1,97 @@
+{
+    "snippets": [
+        {
+            "title": "Adding an Element to a Queue",
+            "description": "This snippet demonstrates how to add an element to a queue using the LinkedList implementation of the Queue interface in Java.",
+            "language": "Java",
+            "code": [
+                "import java.util.LinkedList;",
+                "import java.util.Queue;",
+                "",
+                "public class QueueAddExample {",
+                "    public static void main(String[] args) {",
+                "        Queue<Integer> queue = new LinkedList<>();",
+                "        queue.add(10);",
+                "        System.out.println(\"Queue after add: \" + queue);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "queue",
+                "add",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "10",
+                    "output": "[10]"
+                }
+            ]
+        },
+        {
+            "title": "Removing an Element from a Queue",
+            "description": "This snippet shows how to remove an element from the front of a queue in Java.",
+            "language": "Java",
+            "code": [
+                "import java.util.LinkedList;",
+                "import java.util.Queue;",
+                "",
+                "public class QueueRemoveExample {",
+                "    public static void main(String[] args) {",
+                "        Queue<Integer> queue = new LinkedList<>();",
+                "        queue.add(20);",
+                "        int removedElement = queue.remove();",
+                "        System.out.println(\"Removed element: \" + removedElement);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "queue",
+                "remove",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "[20]",
+                    "output": "20"
+                }
+            ]
+        },
+        {
+            "title": "Checking if a Queue is Empty",
+            "description": "This snippet shows how to check if a queue is empty using the LinkedList implementation in Java.",
+            "language": "Java",
+            "code": [
+                "import java.util.LinkedList;",
+                "import java.util.Queue;",
+                "",
+                "public class QueueIsEmptyExample {",
+                "    public static void main(String[] args) {",
+                "        Queue<Integer> queue = new LinkedList<>();",
+                "        System.out.println(\"Is queue empty? \" + queue.isEmpty());",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "queue",
+                "isEmpty",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(1)",
+            "examples": [
+                {
+                    "input": "[]",
+                    "output": "true"
+                }
+            ]
+        }
+    ]
+}

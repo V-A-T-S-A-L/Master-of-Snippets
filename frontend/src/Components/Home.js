@@ -18,7 +18,7 @@ function Home() {
         examples: []
     });
     const [searchTerm, setSearchTerm] = useState(''); // Search term state
-    const dsaConcepts = ['Arrays', 'Linked Lists', 'Stacks', 'Queues', 'Trees', 'Graphs', 'Sorting', 'Searching'];
+    const dsaConcepts = ['Arrays', 'Linked Lists', 'Stacks', 'Queues', 'Strings', 'Trees', 'Graphs'];
 
     const fetchData = async (concept) => {
         try {

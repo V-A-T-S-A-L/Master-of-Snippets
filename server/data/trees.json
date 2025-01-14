@@ -1,0 +1,164 @@
+{
+    "snippets": [
+        {
+            "title": "Inorder Traversal of a Binary Tree",
+            "description": "This snippet demonstrates the inorder traversal of a binary tree using recursion in Java.",
+            "language": "Java",
+            "code": [
+                "class Node {",
+                "    int data;",
+                "    Node left, right;",
+                "    Node(int item) {",
+                "        data = item;",
+                "        left = right = null;",
+                "    }",
+                "}",
+                "",
+                "class BinaryTree {",
+                "    Node root;",
+                "",
+                "    void inorderTraversal(Node node) {",
+                "        if (node == null)",
+                "            return;",
+                "        inorderTraversal(node.left);",
+                "        System.out.print(node.data + \" \");",
+                "        inorderTraversal(node.right);",
+                "    }",
+                "",
+                "    public static void main(String[] args) {",
+                "        BinaryTree tree = new BinaryTree();",
+                "        tree.root = new Node(1);",
+                "        tree.root.left = new Node(2);",
+                "        tree.root.right = new Node(3);",
+                "        tree.root.left.left = new Node(4);",
+                "        tree.root.left.right = new Node(5);",
+                "        System.out.print(\"Inorder traversal: \");",
+                "        tree.inorderTraversal(tree.root);",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "binary tree",
+                "inorder traversal",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(n)",
+            "examples": [
+                {
+                    "input": "Binary Tree with root 1, left child 2, right child 3",
+                    "output": "4 2 5 1 3"
+                }
+            ]
+        },
+        {
+            "title": "Finding the Height of a Binary Tree",
+            "description": "This snippet shows how to find the height of a binary tree in Java.",
+            "language": "Java",
+            "code": [
+                "class Node {",
+                "    int data;",
+                "    Node left, right;",
+                "    Node(int item) {",
+                "        data = item;",
+                "        left = right = null;",
+                "    }",
+                "}",
+                "",
+                "class BinaryTree {",
+                "    Node root;",
+                "",
+                "    int height(Node node) {",
+                "        if (node == null)",
+                "            return 0;",
+                "        int leftHeight = height(node.left);",
+                "        int rightHeight = height(node.right);",
+                "        return Math.max(leftHeight, rightHeight) + 1;",
+                "    }",
+                "",
+                "    public static void main(String[] args) {",
+                "        BinaryTree tree = new BinaryTree();",
+                "        tree.root = new Node(1);",
+                "        tree.root.left = new Node(2);",
+                "        tree.root.right = new Node(3);",
+                "        tree.root.left.left = new Node(4);",
+                "        System.out.println(\"Height of tree: \" + tree.height(tree.root));",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "binary tree",
+                "height",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(n)",
+            "examples": [
+                {
+                    "input": "Binary Tree with root 1, left child 2, right child 3",
+                    "output": "3"
+                }
+            ]
+        },
+        {
+            "title": "Checking if a Binary Tree is Balanced",
+            "description": "This snippet checks if a binary tree is height-balanced in Java.",
+            "language": "Java",
+            "code": [
+                "class Node {",
+                "    int data;",
+                "    Node left, right;",
+                "    Node(int item) {",
+                "        data = item;",
+                "        left = right = null;",
+                "    }",
+                "}",
+                "",
+                "class BinaryTree {",
+                "    Node root;",
+                "",
+                "    boolean isBalanced(Node node) {",
+                "        if (node == null)",
+                "            return true;",
+                "",
+                "        int leftHeight = height(node.left);",
+                "        int rightHeight = height(node.right);",
+                "",
+                "        return Math.abs(leftHeight - rightHeight) <= 1 && isBalanced(node.left) && isBalanced(node.right);",
+                "    }",
+                "",
+                "    int height(Node node) {",
+                "        if (node == null)",
+                "            return 0;",
+                "        return Math.max(height(node.left), height(node.right)) + 1;",
+                "    }",
+                "",
+                "    public static void main(String[] args) {",
+                "        BinaryTree tree = new BinaryTree();",
+                "        tree.root = new Node(1);",
+                "        tree.root.left = new Node(2);",
+                "        tree.root.right = new Node(3);",
+                "        tree.root.left.left = new Node(4);",
+                "        System.out.println(\"Is tree balanced? \" + tree.isBalanced(tree.root));",
+                "    }",
+                "}"
+            ],
+            "contributor": "V-A-T-S-A-L",
+            "tags": [
+                "binary tree",
+                "balanced",
+                "java"
+            ],
+            "dateAdded": "2025-01-14",
+            "complexity": "O(n)",
+            "examples": [
+                {
+                    "input": "Balanced Binary Tree with root 1",
+                    "output": "true"
+                }
+            ]
+        }
+    ]
+}
