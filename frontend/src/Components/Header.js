@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../Assets/MoS.png'; // Make sure to replace this with the path to your logo image
 
 function Header() {
 	const [darkMode, setDarkMode] = useState(
 		localStorage.getItem('theme') === 'dark'
 	);
+
+	useEffect(() => {
+        // Apply the initial theme based on localStorage value
+        if (darkMode) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [darkMode]);
 
 	const toggleDarkMode = () => {
 		setDarkMode(!darkMode);

@@ -19,9 +19,13 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
     // Ensure code is a string before calling replace
     const formattedCode = Array.isArray(code) ? code.join('\n') : code; // Join array elements with newlines
 
+    const handleModalClick = (e) => {
+        e.stopPropagation();
+    };
+
     return (
-        <div className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg h-auto w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/3 p-6 overflow-y-auto max-h-screen">
+        <div className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50" onClick={closeModal}>
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg h-auto w-11/12 md:w-1/2 lg:w-1/2 xl:w-1/3 p-6 overflow-y-auto max-h-screen" onClick={handleModalClick}>
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-xl font-bold text-gray-800 dark:text-white">{title}</h2>
                     <button onClick={closeModal} className="text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-500">
@@ -35,7 +39,7 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
 
                 {/* Code Section */}
                 <div className="mb-4">
-                    <div className="flex items-center mb-2">
+                    <div className="flex justify-between items-center mb-2">
                         <span className="font-semibold text-gray-700 dark:text-gray-200">{language}</span>
                     </div>
                     <div className="bg-gray-100 dark:bg-gray-700 p-1 rounded-lg border-2 border-gray-300 dark:border-gray-600">
@@ -65,7 +69,7 @@ function Modal({ isOpen, closeModal, title, description, language, code, contrib
 
                 <div className="mb-4 flex">
                     <span className="font-semibold text-gray-700 dark:text-gray-200">Contributed by&nbsp;</span>
-                    <a className="text-gray-600 dark:text-gray-300" href={`https://github.com/`+contributor} target='__blank'>@{contributor}</a>
+                    <a className="text-gray-600 dark:text-gray-300" href={`https://github.com/` + contributor} target='__blank'>@{contributor}</a>
                 </div>
 
                 {/* Tags Section */}

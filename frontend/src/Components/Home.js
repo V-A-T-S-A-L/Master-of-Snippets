@@ -120,14 +120,14 @@ function Home() {
 
             {selectedConcept && (
                 <div className="mt-8">
-                    <h3 className="text-2xl font-semibold text-gray-800 dark:text-white text-center mb-4">
+                    {/* <h3 className="text-2xl font-semibold text-gray-800 dark:text-white text-center mb-4">
                         Flashcards for {selectedConcept}
-                    </h3>
+                    </h3> */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {filteredData.map((snippet, index) => (
                             <div
                                 key={index}
-                                className="p-6 hover:scale-105 transition-transform duration-300 bg-white dark:bg-gray-700 rounded-xl drop-shadow-lg border-2 border-gray-200 dark:border-gray-800 cursor-pointer"
+                                className="p-6 hover:dark:border-gray-400 hover:border-gray-400 transition-transform duration-300 bg-white dark:bg-gray-700 rounded-xl drop-shadow-lg border-2 border-gray-200 dark:border-gray-800 cursor-pointer"
                                 onClick={() => openModal(snippet)}
                             >
                                 <h4 className="text-lg font-bold text-gray-800 dark:text-white">{snippet.title}</h4>
