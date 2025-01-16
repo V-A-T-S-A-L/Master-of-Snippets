@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import Modal from './Modal'; // Import the Modal component
+import Modal from './Modal';
 
 function Home() {
     const [selectedConcept, setSelectedConcept] = useState('');
@@ -17,7 +17,7 @@ function Home() {
         complexity: '',
         examples: []
     });
-    const [searchTerm, setSearchTerm] = useState(''); // Search term state
+    const [searchTerm, setSearchTerm] = useState('');
     const dsaConcepts = ['Arrays', 'Linked Lists', 'Stacks', 'Queues', 'Strings', 'Trees', 'Graphs'];
 
     const fetchData = async (concept) => {
@@ -88,7 +88,6 @@ function Home() {
                 </div>
             </div>
 
-            {/* Search Bar */}
             <div className="text-center mb-8 relative">
                 <div className="relative inline-flex items-center w-64">
                     <input
